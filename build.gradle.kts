@@ -30,7 +30,7 @@ ext {
 }
 
 dependencies {
-    val arcVersion = "0.136.0"
+    val arcVersion = "0.145.0"
     val springBoot = "3.4.3"
     val spingCloud = ""
     val langchain4jVersion = "0.36.2"
