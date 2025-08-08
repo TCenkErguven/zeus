@@ -48,7 +48,7 @@ dependencies {
     implementation("org.eclipse.lmos:arc-api:$arcVersion")
     implementation("org.eclipse.lmos:arc-graphql-spring-boot-starter:$arcVersion")
     implementation("org.eclipse.lmos:arc-view-spring-boot-starter:$arcVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
     // Tracing
     implementation(platform("io.micrometer:micrometer-tracing-bom:1.4.5"))
     implementation("io.micrometer:micrometer-tracing")
