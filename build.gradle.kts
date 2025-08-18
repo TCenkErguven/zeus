@@ -62,6 +62,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-web:$springBoot")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.2.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis:$springBoot")
     // Langchain4j
     implementation("dev.langchain4j:langchain4j-bedrock:$langchain4jVersion")
     implementation("dev.langchain4j:langchain4j-google-ai-gemini:$langchain4jVersion")
@@ -70,6 +71,8 @@ dependencies {
 
     // Metrics
     implementation("io.micrometer:micrometer-registry-prometheus")
+    //Netty
+    runtimeOnly("io.netty:netty-resolver-dns-native-macos:4.1.100.Final:osx-aarch_64")
 
     // Test
     testImplementation("org.springframework.boot:spring-boot-testcontainers")

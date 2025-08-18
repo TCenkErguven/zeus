@@ -1,10 +1,10 @@
 package com.zeus.agents
 
+import org.eclipse.lmos.arc.agents.agent.Skill
 import org.eclipse.lmos.arc.agents.conversation.Conversation
 import org.eclipse.lmos.arc.agents.dsl.boolean
 import org.eclipse.lmos.arc.agents.dsl.extensions.askAgent
 import org.eclipse.lmos.arc.agents.dsl.extensions.callAgent
-import org.eclipse.lmos.arc.agents.dsl.extensions.memory
 import org.eclipse.lmos.arc.agents.dsl.get
 import org.eclipse.lmos.arc.agents.dsl.string
 import org.eclipse.lmos.arc.agents.dsl.types
@@ -12,6 +12,7 @@ import org.eclipse.lmos.arc.spring.Agents
 import org.eclipse.lmos.arc.spring.Functions
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import kotlin.toString
 
 @Configuration
 class OrchestratorAgentConfiguration {
@@ -60,19 +61,15 @@ class OrchestratorAgentConfiguration {
     """.trimIndent()
     ) { (symbol) ->
 
-        //val currentConversation = get<Conversation>()
-        memory<String>(symbol.toString())
-
-        //val xInput = callAgent("xAgent", input = currentConversation)
         val xInput = askAgent("xAgent", input = symbol.toString())
-        //val nasdaqInput = callAgent("nasdaqAgent", input = currentConversation)
         val nasdaqInput = askAgent("nasdaqAgent", input = symbol.toString())
 
         val financialAdvisorInput = """
             xInput: $xInput
             nasdaqInput: $nasdaqInput
-        """.trimIndent()
-        val result = askAgent("financialAdvisorAgent", input = financialAdvisorInput)
+         """.trimIndent()
+
+        val result = askAgent("financialAdvisorAgent", input = financialAdvisorInput.toString())
         result.toString()
     }
 
