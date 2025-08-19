@@ -31,7 +31,7 @@ ext {
 
 dependencies {
     val arcVersion = "0.136.0"
-    val springBoot = "3.4.3"
+    val springBoot = "3.5.4"
     val spingCloud = ""
     val langchain4jVersion = "0.36.2"
 
