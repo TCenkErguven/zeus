@@ -33,7 +33,7 @@ dependencies {
     val arcVersion = "0.136.0"
     val springBoot = "3.4.3"
     val spingCloud = ""
-    val langchain4jVersion = "0.36.2"
+    val langchain4jVersion = "1.3.0"
 
     // Arc
     implementation("org.eclipse.lmos:arc-azure-client:$arcVersion")
